@@ -2,11 +2,7 @@ import PropTypes from "prop-types";
 import styles from "./Layout.module.css";
 
 const Layout = () => {
-  return (
-    <>
-      <></>
-    </>
-  );
+  return <div className={styles.wrapper}></div>;
 };
 
 Layout.propTypes = {};
