@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import logo from "./images/logo.png";
 import styles from "./Header.module.css";
 
@@ -17,7 +16,5 @@ const Header = () => {
     </div>
   );
 };
-
-Header.propTypes = {};
 
 export default Header;

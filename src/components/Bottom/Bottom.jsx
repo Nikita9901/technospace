@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import styles from "./Bottom.module.css";
 
 const Bottom = () => {
@@ -8,7 +7,5 @@ const Bottom = () => {
     </>
   );
 };
-
-Bottom.propTypes = {};
 
 export default Bottom;

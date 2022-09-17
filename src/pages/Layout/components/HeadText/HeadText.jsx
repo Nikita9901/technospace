@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import styles from "./HeadText.module.css";
 
 const HeadText = ({ children }) => {
@@ -8,7 +7,4 @@ const HeadText = ({ children }) => {
     </>
   );
 };
-
-HeadText.propTypes = {};
-
 export default HeadText;

@@ -1,4 +1,3 @@
-import PropTypes from "prop-types";
 import styles from "./Card.module.css";
 
 const Card = ({ textImage, image, description, onClick, buttonText }) => {
@@ -17,7 +16,5 @@ const Card = ({ textImage, image, description, onClick, buttonText }) => {
     </>
   );
 };
-
-Card.propTypes = {};
 
 export default Card;

@@ -1,13 +1,9 @@
-import React, { useState, useEffect } from "react";
-import PropTypes from "prop-types";
-import axios from "axios";
+import React, { useState } from "react";
 import { Button, HeadText, Card } from "./components";
-import cn from "classnames";
 import application from "./images/application.png";
 import geo from "./images/geo.png";
 import close from "./images/close.png";
 import price from "./images/price.png";
-import flag from "./images/flag.jpg";
 import steklo from "./images/steklo.jpg";
 import map from "./images/map.png";
 import cura from "./images/cura.png";
@@ -18,14 +14,6 @@ import kamera from "./images/kamera.jpg";
 import akb from "./images/akb.jpg";
 import gnezdo from "./images/gnezdo.jpg";
 import styles from "./Layout.module.css";
-import { logDOM, queryAllByAltText } from "@testing-library/react";
-
-const leave_request = (form) => {
-  // formActive ? setFormActive(false) : setFormActive(true);
-  console.log("HI");
-};
-
-const handleChangeName = (event) => {};
 
 const Layout = () => {
   const [formActive, setFormActive] = useState(false);
@@ -87,6 +75,7 @@ const Layout = () => {
                   }),
                 });
                 let result = await response.json();
+                console.log(result);
                 // alert(result.message);
                 await setFormActive(false);
               } catch (err) {
