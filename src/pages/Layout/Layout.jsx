@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import axios from "axios";
 import { Button, HeadText, Card } from "./components";
+import cn from "classnames";
 import application from "./images/application.png";
 import geo from "./images/geo.png";
 import close from "./images/close.png";
@@ -8,15 +10,15 @@ import price from "./images/price.png";
 import flag from "./images/flag.jpg";
 import steklo from "./images/steklo.jpg";
 import map from "./images/map.png";
-import cura from "./images/cura.jpg";
+import cura from "./images/cura.png";
 import korpus from "./images/korpus.jpg";
-import kach from "./images/kach.jpg";
+import kach from "./images/kach.png";
 import display from "./images/display.jpg";
 import kamera from "./images/kamera.jpg";
 import akb from "./images/akb.jpg";
 import gnezdo from "./images/gnezdo.jpg";
 import styles from "./Layout.module.css";
-import { queryAllByAltText } from "@testing-library/react";
+import { logDOM, queryAllByAltText } from "@testing-library/react";
 
 const leave_request = (form) => {
   // formActive ? setFormActive(false) : setFormActive(true);
@@ -29,6 +31,7 @@ const Layout = () => {
   const [formActive, setFormActive] = useState(false);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [description, setDescription] = useState("");
 
   return (
     <div className={styles.wrapper}>
@@ -65,8 +68,34 @@ const Layout = () => {
       </div>
       {formActive ? (
         <div className={styles.formBlock}>
-          <form className={styles.forms} id="telegramForm">
+          <form
+            className={styles.forms}
+            id="telegramForm"
+            onSubmit={async (event) => {
+              event.preventDefault();
+              try {
+                console.log("Отправлено");
+                let response = await fetch("http://localhost:3001/telegram", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json;charset=utf-8",
+                  },
+                  body: JSON.stringify({
+                    name: name,
+                    phone: phone,
+                    description: description,
+                  }),
+                });
+                let result = await response.json();
+                // alert(result.message);
+                await setFormActive(false);
+              } catch (err) {
+                throw Error(err);
+              }
+            }}
+          >
             <div className={styles.closeBlock}>
+              <div className={styles.headerForm}> Оставьте заявку</div>
               <img
                 src={close}
                 alt=""
@@ -76,8 +105,15 @@ const Layout = () => {
                 }}
               />
             </div>
-            {/*<textarea type="text" placeholder="Заявка" />*/}
+            <textarea
+              name="description"
+              placeholder="Укажите модель телефона и проблему"
+              onChange={(event) => {
+                setDescription(event.target.value);
+              }}
+            />
             <input
+              className={styles.input}
               type="text"
               placeholder="Имя"
               name="name"
@@ -86,31 +122,16 @@ const Layout = () => {
               }}
             />
             <input
-              type="text"
+              className={styles.input}
+              type="phone"
               placeholder="Номер телефона"
               name="phone"
               onChange={(event) => {
                 setPhone(event.target.value);
               }}
             />
-
-            <button
-              type={"submit"}
-              onClick={async () => {
-                console.log("отправляю");
-                let response = await fetch("http://localhost:3001/telegram", {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json;charset=utf-8",
-                  },
-                  body: JSON.stringify({ name: name, phone: phone }),
-                });
-                let result = await response.json();
-                alert(result.message);
-              }}
-              className={styles.subButton}
-            >
-              Получить обратную связь
+            <button type={"submit"} className={styles.subButton}>
+              Отправить заявку
             </button>
           </form>
         </div>

@@ -1,16 +1,15 @@
-const express = require("express");
 const ctrlTelegram = require("./telegramMsg");
-const createError = require("http-errors");
-const path = require("path");
-
-const PORT = process.env.PORT || 3001;
+const express = require("express");
+const port = process.env.PORT || 3001;
+const cors = require("cors");
 const app = express();
-
-app.listen(PORT, (err) => {
+app.use(cors());
+app.use(express.json());
+app.listen(port, (err) => {
   if (err) {
     throw Error(err);
   }
-  console.log(`Server is started on port ${PORT}`);
+  console.log(`Server is started on port 3001`);
 });
 
-app.post("/telegram", ctrlTelegram.sendMsg);
+app.all("/telegram", ctrlTelegram.sendMsg);

@@ -1,5 +1,6 @@
 import { Layout } from "../pages";
 import { Bottom, Header } from "../components";
+import io from "socket.io-client";
 import styles from "./App.module.css";
 
 function App() {
