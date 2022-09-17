@@ -21,7 +21,7 @@
     text-align: right;
     padding-right: 10px;
 }
-@media screen and (max-width: 434px){
+@media screen and (max-width: 458px){
     .contacts{
         visibility: hidden;
         position: absolute;
@@ -30,7 +30,7 @@
         justify-content: center;
     }
 }
-@media screen and (max-width: 588px){
+@media screen and (max-width: 636px){
     .work_time{
         visibility: hidden;
         position: absolute;

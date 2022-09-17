@@ -1,12 +1,18 @@
 import { Layout } from "../pages";
-import { Header } from "../components";
+import { Bottom, Header } from "../components";
 import styles from "./App.module.css";
 
 function App() {
   return (
     <div className={styles.App}>
-      <Header />
+      <div className={styles.header}>
+        <Header />
+      </div>
+
       <Layout />
+      <div className={styles.bottom}>
+        <Bottom />
+      </div>
     </div>
   );
 }

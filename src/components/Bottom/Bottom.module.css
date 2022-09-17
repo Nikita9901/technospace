@@ -1,0 +1,6 @@
+.wrapper{
+    height: 70px;
+    display: flex;
+    background-color: #313131;
+    color: white;
+}

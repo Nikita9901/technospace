@@ -1,0 +1,28 @@
+.wrapper{
+    background-color: #ffffff;
+    height: 80px;
+    width: 350px;
+    border-radius: 25px;
+    box-shadow: 2px 2px 5px #737373;
+    transform-origin: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+@media screen and (max-width: 1070px){
+    .wrapper{
+        width: 90%;
+    }
+
+}
+.image{
+    height: 35px;
+    margin-right: 10px;
+}
+.wrapper:hover{
+    scale: 110%;
+    cursor: pointer;
+    box-shadow: 10px 10px 15px #737373;
+    transition: .5s;
+}
