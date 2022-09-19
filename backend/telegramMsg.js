@@ -11,7 +11,6 @@ module.exports.sendMsg = (req, res) => {
     `<b>Phone</b>: ${reqBody.phone}`,
     reqBody.description,
   ];
-  console.log(fields[1]);
   let msg = "";
   //проходимся по массиву и склеиваем все в одну строку
   fields.forEach((field) => {
@@ -19,7 +18,6 @@ module.exports.sendMsg = (req, res) => {
   });
   //кодируем результат в текст, понятный адресной строке
   msg = encodeURI(msg);
-  console.log(msg);
   //делаем запрос
   http.post(
     `https://api.telegram.org/bot${config.telegram.token}/sendMessage?chat_id=${config.telegram.chat}&parse_mode=html&text=${msg}`,
