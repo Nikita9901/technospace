@@ -62,8 +62,7 @@ const Layout = () => {
             onSubmit={async (event) => {
               event.preventDefault();
               try {
-                console.log("Отправлено");
-                let response = await fetch("http://localhost:3001/telegram", {
+                let response = await fetch("/telegram", {
                   method: "POST",
                   headers: {
                     "Content-Type": "application/json;charset=utf-8",
