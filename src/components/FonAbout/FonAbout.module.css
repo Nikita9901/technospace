@@ -1,0 +1,47 @@
+.wrapper{
+    display: flex;
+    left: 0;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+}
+.dark{
+    height: 500px;
+    width: 100vw;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    left: 0;
+}
+.fon{
+    width: 100vw;
+    left: 0;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+    z-index: 0;
+    position: fixed;
+}
+.text{
+    margin-top: 75px;
+    position: relative;
+    width: 80%;
+    z-index: 3;
+    left:-30px
+}
+@media screen and (max-width: 1070px){
+    .wrapper{
+        height: 400px;
+    }
+    .dark{
+        height: 400px;
+    }
+}
+@media screen and (max-width: 458px){
+    .wrapper{
+        height: 300px;
+    }
+    .dark{
+        height: 300px;
+    }
+}

@@ -5,6 +5,7 @@
     display: flex;
     background-color: #303030;
     color: aliceblue;
+    z-index: 3;
 }
 .contacts{
     display: flex;

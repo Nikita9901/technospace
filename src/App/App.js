@@ -1,5 +1,6 @@
 import { Layout } from "../pages";
-import { Bottom, Header } from "../components";
+import fon from "./images/fon.jpg"
+import { Bottom, Header, FonAbout } from "../components";
 import styles from "./App.module.css";
 
 function App() {
@@ -8,8 +9,13 @@ function App() {
       <div className={styles.header}>
         <Header />
       </div>
-
-      <Layout />
+        <div className={styles.fonImage}>
+            <img src={fon} alt=""/>
+        </div>
+        <div className={styles.fon}>
+            <FonAbout/>
+        </div>
+      <Layout className={styles.layout}/>
       <div className={styles.bottom}>
         <Bottom />
       </div>

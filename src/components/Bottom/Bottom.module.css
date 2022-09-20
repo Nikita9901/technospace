@@ -3,4 +3,17 @@
     display: flex;
     background-color: #313131;
     color: white;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.adres{
+    text-align: center;
+    display: none;
+}
+@media screen and (max-width: 458px){
+    .adres{
+        display: block;
+    }
 }

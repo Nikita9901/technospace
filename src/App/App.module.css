@@ -6,7 +6,25 @@
 .header{
     width: 100%;
     position: fixed;
+    z-index: 4;
+}
+.layout{
+    background-color: #d8d8d8;
+    z-index: 3;
+}
+.fon{
+    z-index: 2;
+}
+.fonImage{
+    z-index: -1;
+    top:-600px;
+    position: fixed;
 }
 .bottom{
     width: 100%;
+}
+@media screen and (max-width: 458px){
+    .fonImage{
+        top:-800px
+    }
 }

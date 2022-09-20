@@ -3,8 +3,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90%;
-    margin: 90px 10px 10px;
+    width: 100%;
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-top: 20px;
+    background-color: #d8d8d8;
 }
 .buttons{
     display: flex;
