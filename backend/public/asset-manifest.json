@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0b78fcf9.css",
+    "main.js": "/static/js/main.a51a7fca.js",
+    "static/media/fon.jpg": "/static/media/fon.3cbe1c63fd4529f3a2e9.jpg",
+    "static/media/logo.png": "/static/media/logo.aa98ea213f91bf908a5a.png",
+    "static/media/korpus.jpg": "/static/media/korpus.ef3b0f4a74be6b9b085b.jpg",
+    "static/media/steklo.jpg": "/static/media/steklo.b3e48b50a2d458445001.jpg",
+    "static/media/akb.jpg": "/static/media/akb.72f0dded4494ed3cf26d.jpg",
+    "static/media/gnezdo.jpg": "/static/media/gnezdo.552eeb444189b0657af7.jpg",
+    "static/media/kamera.jpg": "/static/media/kamera.d27a7be9bb4afe06d814.jpg",
+    "static/media/text.png": "/static/media/text.55fb0f663c12c0256839.png",
+    "static/media/display.jpg": "/static/media/display.6b576c8beef6ce89bea7.jpg",
+    "static/media/price.png": "/static/media/price.8c178aa95aeb0b4b1898.png",
+    "static/media/cura.png": "/static/media/cura.8ff6785b8542113961a9.png",
+    "static/media/map.png": "/static/media/map.4f09180b30d51fbba74b.png",
+    "static/media/kach.png": "/static/media/kach.41407d358ab3bd38fbb3.png",
+    "static/media/geo.png": "/static/media/geo.03538d3bafad2e70091a.png",
+    "static/media/close.png": "/static/media/close.4a0333b93b66b21bbd20.png",
+    "static/media/application.png": "/static/media/application.b7ac893340e1ffcada9f.png",
+    "index.html": "/index.html",
+    "main.0b78fcf9.css.map": "/static/css/main.0b78fcf9.css.map",
+    "main.a51a7fca.js.map": "/static/js/main.a51a7fca.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0b78fcf9.css",
+    "static/js/main.a51a7fca.js"
+  ]
+}
