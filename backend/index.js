@@ -31,7 +31,7 @@ app.use(express.json());
 //   `;
 // }
 
-app.use("/", express.static("./backend/public"));
+app.use("/", express.static("./public"));
 
 app.listen(port, (err) => {
   if (err) {
