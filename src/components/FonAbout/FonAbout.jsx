@@ -1,4 +1,4 @@
-import text from "./images/text.png"
+import text from "./images/text.svg"
 import styles from './FonAbout.module.css';
 
 const FonAbout = () => {
