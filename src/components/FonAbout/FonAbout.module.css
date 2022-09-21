@@ -27,14 +27,16 @@
     position: relative;
     width: 80%;
     z-index: 3;
-    left:-30px
 }
-@media screen and (max-width: 1070px){
+@media screen and (max-width: 1270px){
     .wrapper{
         height: 400px;
     }
     .dark{
         height: 400px;
+    }
+    .text{
+        scale: 1.4;
     }
 }
 @media screen and (max-width: 458px){
@@ -43,5 +45,8 @@
     }
     .dark{
         height: 300px;
+    }
+    .text{
+        scale: 1.55;
     }
 }

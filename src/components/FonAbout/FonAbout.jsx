@@ -1,4 +1,3 @@
-import fon from "./images/fon.jpg"
 import text from "./images/text.png"
 import styles from './FonAbout.module.css';
 

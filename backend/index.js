@@ -1,6 +1,6 @@
 const ctrlTelegram = require("./telegramMsg");
 const express = require("express");
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3000;
 const cors = require("cors");
 const app = express();
 app.use(cors());
