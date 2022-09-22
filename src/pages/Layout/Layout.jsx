@@ -54,6 +54,7 @@ const Layout = () => {
           </a>
         </div>
       </div>
+
       {formActive ? (
         <div className={styles.formBlock}>
           <form
@@ -75,6 +76,11 @@ const Layout = () => {
                 });
                 let result = await response.json();
                 console.log(result);
+                  window.gtag('event', '', { 'event_category': '', 'event_action': 'Lead', });
+                  window.gtag('event', 'sendForm', {
+                      'formName': 'Lead',
+                      'formURL': 'technospace.by',
+                  });
                 // alert(result.message);
                 await setFormActive(false);
               } catch (err) {

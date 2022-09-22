@@ -2,6 +2,13 @@ import { Layout } from "../pages";
 import fon from "./images/fon.jpg"
 import { Bottom, Header, FonAbout } from "../components";
 import styles from "./App.module.css";
+import TagManager from 'react-gtm-module'
+
+const tagManagerArgs = {
+    gtmId: 'GTM-xxxxxx'
+};
+
+TagManager.constructor(tagManagerArgs)
 
 function App() {
   return (
