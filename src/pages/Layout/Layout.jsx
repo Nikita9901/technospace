@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import { Button, HeadText, Card } from "./components";
+import { CSSTransition } from "react-transition-group";
 import application from "./images/application.png";
 import geo from "./images/geo.png";
 import close from "./images/close.png";
@@ -20,6 +21,11 @@ const Layout = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [description, setDescription] = useState("");
+  const [resultMessage, setResultMessage] = useState({
+    isShow: false,
+    text: "",
+  });
+  const nodeRef = useRef(null);
 
   return (
     <div className={styles.wrapper}>
@@ -54,7 +60,31 @@ const Layout = () => {
           </a>
         </div>
       </div>
-
+      <CSSTransition
+        in={resultMessage.isShow}
+        nodeRef={nodeRef}
+        timeout={100000}
+        classNames="alert"
+        unmountOnExit
+        onEnter={() => setFormActive(false)}
+        onExited={() => null}
+      >
+        <div className={styles.otvet}>
+          {resultMessage.text}
+          <img
+            src={close}
+            alt=""
+            className={styles.closeImage}
+            onClick={() => {
+              setResultMessage({
+                isShow: false,
+                text: "",
+              });
+            }}
+          />
+        </div>
+      </CSSTransition>
+      {/*{!resultMessage ? (<div className={styles.otvet}>Oshibka</div>) : null}*/}
       {formActive ? (
         <div className={styles.formBlock}>
           <form
@@ -76,14 +106,29 @@ const Layout = () => {
                 });
                 let result = await response.json();
                 console.log(result);
-                  window.gtag('event', '', { 'event_category': '', 'event_action': 'Lead', });
-                  window.gtag('event', 'sendForm', {
-                      'formName': 'Lead',
-                      'formURL': 'technospace.by',
-                  });
-                // alert(result.message);
+                window.gtag("event", "", {
+                  event_category: "",
+                  event_action: "Lead",
+                });
+                window.gtag("event", "sendForm", {
+                  formName: "Lead",
+                  formURL: "technospace.by",
+                });
+                // alert("Успешно отправлено!!!");
+                await setResultMessage({
+                  isShow: true,
+                  text: "Успешно отправлено!",
+                });
                 await setFormActive(false);
               } catch (err) {
+                // alert("Ошибка отправления");
+                await setResultMessage({
+                  isShow: true,
+                  text: "Ошибка отправления",
+                });
+                // setTimeout(() => {
+                //     setResultMessage(true)
+                // }, 5*1000)
                 throw Error(err);
               }
             }}
