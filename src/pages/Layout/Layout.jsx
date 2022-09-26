@@ -1,19 +1,34 @@
 import React, { useRef, useState } from "react";
 import { Button, HeadText, Card } from "./components";
 import { CSSTransition } from "react-transition-group";
+import text1 from "./images/1.svg";
+import text2 from "./images/2.svg";
+import text3 from "./images/3.svg";
+import text4 from "./images/4.svg";
+import text5 from "./images/5.svg";
+import text6 from "./images/6.svg";
+import head1 from "./images/1_head.svg";
+import head2 from "./images/2_head.svg";
+import head3 from "./images/3_head.svg";
+import head4 from "./images/4_head.svg";
+import head5 from "./images/5_head.svg";
+import head6 from "./images/6_head.svg";
+import head7 from "./images/7_head.svg";
+import head8 from "./images/8_head.svg";
+import head9 from "./images/9_head.svg";
 import application from "./images/application.png";
 import geo from "./images/geo.png";
 import close from "./images/close.png";
 import price from "./images/price.png";
-import steklo from "./images/steklo.jpg";
+import display from "./images/steklo.png";
 import map from "./images/map.png";
 import cura from "./images/cura.png";
-import korpus from "./images/korpus.jpg";
+import korpus from "./images/korpus.png";
 import kach from "./images/kach.png";
-import display from "./images/display.jpg";
-import kamera from "./images/kamera.jpg";
-import akb from "./images/akb.jpg";
-import gnezdo from "./images/gnezdo.jpg";
+import steklo from "./images/display.png";
+import kamera from "./images/kamera.png";
+import akb from "./images/akb.png";
+import gnezdo from "./images/gnezdo.png";
 import styles from "./Layout.module.css";
 
 const Layout = () => {
@@ -182,20 +197,16 @@ const Layout = () => {
         <div className={styles.line}>
           <Card
             image={map}
-            textImage={"Местоположение"}
-            description={
-              "Мы находимся в 4 минутах ходьбы от станции метро молодёжная. До нас легко добраться."
-            }
+            textImage={head4}
+            description={text4}
             onClick={() => {
               setFormActive(true);
             }}
             buttonText={""}
           />
           <Card
-            textImage={"От двери до двери"}
-            description={
-              'Бесплатный курьер заберет ваше устройство и вернет куда вам удобно уже "новенькое". '
-            }
+            textImage={head5}
+            description={text5}
             image={cura}
             onClick={() => {
               setFormActive(true);
@@ -203,11 +214,9 @@ const Layout = () => {
             buttonText={""}
           />
           <Card
-            textImage={"Качество выше цены!"}
+            textImage={head6}
             image={kach}
-            description={
-              "Мы гарантируем вам выполненные в срок работы за минимальную стоимость любой сложности. "
-            }
+            description={text6}
             onClick={() => {
               setFormActive(true);
             }}
@@ -220,20 +229,16 @@ const Layout = () => {
         <div className={styles.line}>
           <Card
             image={steklo}
-            textImage={"Замена стекла от 45р"}
-            description={
-              "Не обязательно менять весь дисплей, у нас вы можете заменить только стекло. Мы поможем вам сэкономить."
-            }
+            textImage={head1}
+            description={text1}
             onClick={() => {
               setFormActive(true);
             }}
             buttonText={"Узнать точную стоимость"}
           />
           <Card
-            textImage={"Замена дисплея от 50р"}
-            description={
-              "Заменим дисплей по низкой цене. Наши сотрудники имеют более 10 лет опыта. Даём гарантию 60+ дней"
-            }
+            textImage={head2}
+            description={text2}
             image={display}
             onClick={() => {
               setFormActive(true);
@@ -241,11 +246,9 @@ const Layout = () => {
             buttonText={"Узнать точную стоимость"}
           />
           <Card
-            textImage={"Замена АКБ от 15р"}
+            textImage={head3}
             image={akb}
-            description={
-              "Поможем подобрать подходящую вам по цене, сделаем быстро и качественно."
-            }
+            description={text3}
             onClick={() => {
               setFormActive(true);
             }}
@@ -255,7 +258,7 @@ const Layout = () => {
         <div className={styles.line}>
           <Card
             image={gnezdo}
-            textImage={"Замена разъема от 28р"}
+            textImage={head7}
             description={""}
             onClick={() => {
               setFormActive(true);
@@ -263,7 +266,7 @@ const Layout = () => {
             buttonText={"Узнать точную стоимость"}
           />
           <Card
-            textImage={"Замена корпуса от 20р"}
+            textImage={head8}
             description={""}
             image={korpus}
             onClick={() => {
@@ -272,7 +275,7 @@ const Layout = () => {
             buttonText={"Узнать точную стоимость"}
           />
           <Card
-            textImage={"Замена камеры от 28р"}
+            textImage={head9}
             image={kamera}
             description={""}
             onClick={() => {

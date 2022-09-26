@@ -5,8 +5,12 @@ const Card = ({ textImage, image, description, onClick, buttonText }) => {
     <>
       <div className={styles.wrapper}>
         <img src={image} alt="" className={styles.image} />
-        <div className={styles.textImage}> {textImage}</div>
-        <div className={styles.description}>{description}</div>
+        <div className={styles.textImage}>
+          <img src={textImage} alt="" />
+        </div>
+        <div className={styles.description}>
+          <img src={description} alt="" />
+        </div>
         {buttonText ? (
           <div className={styles.button} onClick={onClick}>
             {buttonText}
