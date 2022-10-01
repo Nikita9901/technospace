@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Button, HeadText, Card } from "./components";
 import { CSSTransition } from "react-transition-group";
+import MaskedInput from "react-maskedinput";
 import text1 from "./images/1.svg";
 import text2 from "./images/2.svg";
 import text3 from "./images/3.svg";
@@ -107,6 +108,28 @@ const Layout = () => {
             id="telegramForm"
             onSubmit={async (event) => {
               event.preventDefault();
+              if (name === "") {
+                await setResultMessage({
+                  isShow: true,
+                  text: "Укажите ваше имя!",
+                });
+                return;
+              }
+              if (phone === "") {
+                await setResultMessage({
+                  isShow: true,
+                  text: "Укажите номер телефона!",
+                });
+                return;
+              }
+              if (description === "") {
+                await setResultMessage({
+                  isShow: true,
+                  text: "Укажите проблему и модель!",
+                });
+                return;
+              }
+
               try {
                 let response = await fetch("/telegram", {
                   method: "POST",
@@ -160,25 +183,32 @@ const Layout = () => {
               />
             </div>
             <textarea
+              required={true}
               name="description"
               placeholder="Укажите модель телефона и проблему"
               onChange={(event) => {
                 setDescription(event.target.value);
               }}
+              value={description}
             />
             <input
+              required={true}
               className={styles.input}
               type="text"
               placeholder="Имя"
               name="name"
+              value={name}
               onChange={(event) => {
                 setName(event.target.value);
               }}
             />
-            <input
+            <MaskedInput
+              required={true}
+              mask={"+375 (11) 111-11-11"}
               className={styles.input}
-              type="phone"
-              placeholder="Номер телефона"
+              value={phone}
+              type="tel"
+              placeholder="+375 (__) ___-__-__"
               name="phone"
               onChange={(event) => {
                 setPhone(event.target.value);

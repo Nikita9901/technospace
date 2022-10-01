@@ -24,10 +24,15 @@
 }
 .text{
     margin-top: 75px;
-    position: relative;
     width: 80%;
     z-index: 3;
 }
+.text_block{
+    display: flex;
+    width: 100%;
+    z-index: 3;
+}
+
 @media screen and (max-width: 1170px){
     .wrapper{
         height: 400px;
@@ -48,5 +53,10 @@
     }
     .text{
         scale: 1.2;
+    }
+}
+@media screen and (max-width: 500px){
+    .text{
+        margin-left: 45px;
     }
 }
